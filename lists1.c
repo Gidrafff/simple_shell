@@ -15,7 +15,7 @@ size_t list_len(const list_t *b)
 		b = b->next;
 		a++;
 	}
-	return (b);
+	return (a);
 }
 
 /**
@@ -31,7 +31,7 @@ char **list_to_strings(list_t *h)
 	char **strs;
 	char *str;
 
-	if (!head || !a)
+	if (!h || !a)
 		return (NULL);
 	strs = malloc(sizeof(char *) * (a + 1));
 	if (!strs)
@@ -42,7 +42,7 @@ char **list_to_strings(list_t *h)
 		if (!str)
 		{
 			for (e = 0; e < a; e++)
-				free(strs[j]);
+				free(strs[e]);
 			free(strs);
 			return (NULL);
 		}
@@ -50,7 +50,7 @@ char **list_to_strings(list_t *h)
 		str = _strcpy(str, node->str);
 		strs[a] = str;
 	}
-	strs[i] = NULL;
+	strs[a] = NULL;
 	return (strs);
 }
 
@@ -67,7 +67,7 @@ size_t print_list(const list_t *b)
 
 	while (b)
 	{
-		_puts(convert_number(h->num, 10, 0));
+		_puts(convert_number(b->num, 10, 0));
 		_putchar(':');
 		_putchar(' ');
 		_puts(b->str ? b->str : "(nil)");
