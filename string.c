@@ -23,7 +23,7 @@ int _strlen(char *r)
  * @r1: the first strang to compare
  * @r2: the second strang to compare
  *
- * Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
+ * Return: negative if r1 < r2, positive if r1 > r2, zero if r1 == r2
  */
 int _strcmp(char *r1, char *r2)
 {
